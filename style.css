@@ -37,7 +37,7 @@
   /* Agrandit la taille du texte*/
   font-weight: 700;
   /* police du texte*/
-  font-family: sans-serif;
+  font-family: "Lobster", cursive;
 }
 .nav-links {
   display: flex;
@@ -68,6 +68,7 @@ div .p-button {
 
 span {
   color: red;
+  font-family: "Lobster", cursive;
 }
 
 .button {
@@ -118,6 +119,14 @@ span {
   text-align: justify;
   margin-left: 40px;
   margin-top: 35px;
+  line-height: 1.8;
+  text-align: left;
+  position: center;
+  top: 20px; /* distance depuis le haut */
+  left: 20px; /* distance depuis la gauche */
+  width: 400px; /* largeur du paragraphe */
+  background: rgba(255, 255, 255, 0.8); /* optionnel */
+  padding: 15px;
 }
 footer {
   background-image: url(chef.png);
@@ -130,86 +139,113 @@ footer {
   margin-left: 40px;
   margin-right: 400px;
 }
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
 
-/* ========================= */
-/* TABLETTES */
-/* ========================= */
+/* Évite les débordements */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Images responsives */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablettes */
 @media screen and (max-width: 992px) {
   .nav-container {
     flex-direction: column;
     gap: 20px;
+    text-align: center;
   }
 
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 15px;
   }
 
-  .contenair-principal {
-    height: auto;
-    min-height: 500px;
+  .TP h2 {
+    font-size: 60px;
   }
 
-  .text {
-    margin-top: 100px;
-    padding: 20px;
+  .p1 {
+    width: 90%;
+    margin: 0 auto;
   }
 
   footer {
-    margin-right: 40px;
-    background-size: 250px;
+    margin-right: 0;
+    padding: 40px 20px;
+    text-align: center;
+    background-position: center bottom;
+  }
+
+  .service {
+    margin-left: 0;
+  }
+
+  .p2 {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
   }
 }
 
-/* ========================= */
-/* SMARTPHONES */
-/* ========================= */
+/* Smartphones */
 @media screen and (max-width: 768px) {
-  /* Barre rouge du haut */
   .info {
     flex-direction: column;
-    text-align: center;
     gap: 10px;
+    text-align: center;
   }
 
-  /* Navigation */
+  .Pa1,
+  .Pa2 {
+    font-size: 14px;
+  }
+
   .nav-container {
     flex-direction: column;
-    padding: 15px;
+  }
+
+  .logo {
+    font-size: 32px;
+    margin-bottom: 15px;
   }
 
   .nav-links {
     flex-direction: column;
-    align-items: center;
     gap: 12px;
-    margin-top: 15px;
+    align-items: center;
   }
 
   .nav-links li {
     margin-left: 0;
   }
 
-  .logo {
-    font-size: 28px;
-  }
-
-  /* Section principale */
   .contenair-principal {
+    min-height: 600px;
     height: auto;
-    min-height: 500px;
-    background-position: center;
+    padding-bottom: 50px;
   }
 
   .text {
     margin-top: 80px;
-    padding: 20px;
+    padding: 0 20px;
   }
 
-  .TP {
-    font-size: 24px;
+  .TP h2 {
+    font-size: 45px;
+    line-height: 1.2;
   }
 
   .p1 {
+    width: 100%;
     font-size: 15px;
     line-height: 1.6;
   }
@@ -218,54 +254,71 @@ footer {
     padding: 10px 25px;
   }
 
-  /* Footer */
+  .points {
+    margin-top: 25px;
+  }
+
   footer {
-    margin-left: 20px;
-    margin-right: 20px;
-    background-image: none;
     height: auto;
-    padding-bottom: 20px;
+    margin: 0;
+    padding: 40px 20px;
+    background-size: 220px;
+    background-position: center bottom;
   }
 
-  .service,
-  .p2 {
-    margin-left: 0;
+  .service {
+    font-size: 35px;
+    text-align: center;
   }
 
   .p2 {
-    text-align: left;
-    line-height: 1.8;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+    background: transparent;
+    text-align: center;
   }
 }
-/* ========================= */
+
+/* Petits téléphones */
 @media screen and (max-width: 480px) {
   .logo {
-    font-size: 22px;
+    font-size: 28px;
   }
 
-  .TP {
-    font-size: 20px;
+  .TP h2 {
+    font-size: 34px;
   }
 
   .p1 {
     font-size: 14px;
   }
 
-  .button {
-    width: 100%;
-    max-width: 220px;
-    text-align: center;
-  }
-
-  .points {
-    margin-top: 25px;
-  }
-
   .service {
-    font-size: 22px;
+    font-size: 28px;
   }
 
-  .p2 {
+  .button {
+    padding: 10px 20px;
     font-size: 14px;
+  }
+
+  footer {
+    background-size: 180px;
+  }
+}
+
+/* Très grands écrans */
+@media screen and (min-width: 1400px) {
+  .nav-container {
+    max-width: 1400px;
+  }
+
+  .TP h2 {
+    font-size: 90px;
+  }
+
+  .p1 {
+    font-size: 18px;
   }
 }
